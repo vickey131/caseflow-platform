@@ -1,10 +1,17 @@
-import { Outlet } from 'react-router'
+import { NavLink, Outlet } from 'react-router'
 
 function App() {
   return (
     <div>
-      <h1>CaseFlow</h1>
-      <Outlet />
+      <header>
+        <h1>CaseFlow</h1>
+        <nav>
+          <NavLink to="/cases">Cases</NavLink> | <NavLink to="/cases/new">New case</NavLink>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 }

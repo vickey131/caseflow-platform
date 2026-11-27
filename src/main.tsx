@@ -5,8 +5,15 @@ import './index.css'
 import { router } from './app/router.tsx'
 import 'innovations-ui-kit/style.css'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-)
+async function enableMocking() {
+  const { worker } = await import('./mocks/browser')
+  return worker.start()
+}
+
+enableMocking().then(() => {
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>,
+  )
+})

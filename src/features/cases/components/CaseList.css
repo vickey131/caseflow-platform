@@ -1,0 +1,18 @@
+.case-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, 2fr);
+  gap: 16px;
+  align-items: end;
+  margin-block: 16px;
+  text-align: left;
+}
+
+.case-list__table {
+  margin-block: 16px;
+}
+
+@media (max-width: 600px) {
+  .case-filters {
+    grid-template-columns: 1fr;
+  }
+}

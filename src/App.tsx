@@ -1,10 +1,17 @@
-import { Button } from 'innovations-ui-kit'
+import { NavLink, Outlet } from 'react-router'
 
 function App() {
   return (
     <div>
-      <h1>CaseFlow</h1>
-      <Button>Test UI Kit</Button>
+      <header>
+        <h1>CaseFlow</h1>
+        <nav>
+          <NavLink to="/cases">Cases</NavLink> | <NavLink to="/cases/new">New case</NavLink>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 }

@@ -4,8 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build:ui-kit": "npm --prefix ../innovations-ui-kit run build",
+    "predev": "npm run build:ui-kit",
     "dev": "vite",
+    "prebuild": "npm run build:ui-kit",
     "build": "tsc -b && vite build",
+    "pretypecheck": "npm run build:ui-kit",
     "typecheck": "tsc -b",
     "lint": "eslint .",
     "test": "vitest run",
